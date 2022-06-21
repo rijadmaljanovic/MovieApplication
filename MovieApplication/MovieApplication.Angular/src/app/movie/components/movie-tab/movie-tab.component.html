@@ -1,0 +1,23 @@
+<div class="d-flex flex-column my-lg-4 my-md-3 my-sm-1">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      
+            <li class="nav-item">
+              <a class="nav-link" [ngClass]="{'active' : showMovies}" id="movies-tab" data-toggle="tab"  (click)="toggleShowMovie(true)"  role="tab" aria-controls="movies" aria-selected="true">Movies</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" [ngClass]="{'active' : !showMovies}" id="shows-tab" data-toggle="tab" (click)="toggleShowMovie(false)"   role="tab" aria-controls="shows" aria-selected="false">TV Shows</a>
+            </li>
+          </ul>
+
+          <div class="tab-content" id="myTabContent">
+              <div  *ngIf="showMovies" class="tab-pane fade show active" id="movies" role="tabpanel" aria-labelledby="movies-tab" >
+                <app-movie-list [showOnlyMovies]="showMovies"></app-movie-list>
+              </div>
+              <div *ngIf="!showMovies" class="tab-pane fade show active" id="shows" role="tabpanel" aria-labelledby="shows-tab">
+                <app-movie-list  [showOnlyMovies]="showMovies"></app-movie-list>
+              </div>
+            </div>
+    </div>
+
+  

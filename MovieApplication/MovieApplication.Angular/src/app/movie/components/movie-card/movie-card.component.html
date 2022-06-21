@@ -1,0 +1,32 @@
+    <div class="card" style="width: 23rem;">
+      <img class="card-img-top" [src]="imagePathCreator(movie.imagePath)" alt="Card image">
+      
+      <div class="card-body">
+        
+        <h5 class="card-title">{{movie.movieTitle}}</h5>
+        <p class="card-text"><small class="text-muted">Date of release: <br/> {{movie.releaseDate}}</small></p>
+        
+        <div class="d-flex flex-column justify-content-center align-items-center">
+          <h5 style="color:#f87272;">Total movie rating {{movie.avgRating | number : '1.1-1' }}</h5>
+        </div>
+
+        <p class="card-text">{{movie.description}}</p>
+
+        <div class="card-footer text-muted d-flex flex-row flex-wrap justify-content-center ">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+
+            <label class="btn btn-secondary active">
+              <input type="radio" name="options" id="option1" autocomplete="off" [routerLink]="['details',movie.id]"> Details
+            </label>
+
+            <label class="btn btn-outline-secondary">
+              <input type="radio" name="options" id="option2" autocomplete="off" (click)="openModal()"> Leave a rating
+            </label>
+           
+          </div>
+         
+        </div>
+      </div>
+    </div>
+    <app-movie-modal class="modal fade" ></app-movie-modal>
+

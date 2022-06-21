@@ -1,0 +1,4 @@
+.nav-tabs li:hover {
+    color: #ffd700;
+    cursor: pointer;
+  }

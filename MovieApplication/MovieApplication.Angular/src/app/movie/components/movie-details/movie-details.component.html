@@ -1,0 +1,37 @@
+<div *ngIf="movie">
+
+        <img style="width: 100%;" class="movie-thumb" [src]="imagePathCreator(movie.imagePath)" alt=""> 
+        
+        <div style="text-align:center">
+            <h2>{{movie.movieTitle}}</h2> 
+        </div>
+        <p class="card-text"><small class="text-muted">Date of release:  {{movie.releaseDate}}</small></p>
+        <p>{{movie.description}}</p>
+        
+        <hr/>
+        
+        <div *ngIf="!isDetail" style="text-align:center">
+            <h4 >Leave a rating</h4>
+            <movie-rating  [movie]="movie" ></movie-rating>
+            <p *ngIf="movie.ratingByUser" class="card-text"><small class="text-muted">Your previous rating for this movie is {{movie.ratingByUser}} stars</small></p>
+        </div>
+        
+        <div *ngIf="isDetail"  class="d-flex flex-column justify-content-center align-items-center">
+            <h5 style="color:#f87272;">Total movie rating {{movie.avgRating | number : '1.1-1' }}</h5>
+        </div>
+    </div>
+    
+    <hr/>
+    
+    <!-- ACTORS -->
+    <div *ngIf="isDetail" >
+        <h4 style="text-align:center">Cast</h4>
+        <div *ngIf="movie.actors" class="d-flex flex-row flex-wrap justify-content-center mt-2 mt-lg-4">
+            <div *ngFor="let actor of movie.actors" class="d-flex flex-column ml-2 mt-3 w-25" style="cursor: pointer;">
+                <p class="text-primary mb-1 text-center">{{actor.name}}</p>
+                <img class="w-100" [src]="imagePathCreator(actor.imagePath)"/>
+            </div>
+            <button class="btn btn-lg btn-outline-info btn-block" type="button" (click)="backClicked()">Return to list</button>
+        </div>
+    </div>
+

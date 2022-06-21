@@ -1,0 +1,24 @@
+<div *ngIf="movies" class="d-flex flex-column m-0 p-0">
+
+    <div class="mx-auto my-2 w-75">
+        <input class="form-control" type="text" placeholder="Search" (keyup)="onSearchKeyUp($any($event.target).value)">
+    </div>
+    <h4 *ngIf="showOnlyMovies" style="color:#fcf1f1; text-align: center; background-color: rgb(69, 69, 80);;">Top rated movies </h4>
+    <h4 *ngIf="!showOnlyMovies" style="color:#fcf7f7; text-align: center; background-color: rgb(69, 69, 80);">Top rated shows </h4>
+
+    <div class="d-flex flex-row justify-content-around flex-wrap">
+        <div *ngFor="let movie of movies">
+            <div class="card w-75">
+
+            <app-movie-card [movie]="movie"></app-movie-card>
+            
+            </div>
+        </div>
+        <div *ngIf="movies.length==0"><img [src]="noResult"></div>
+    </div>
+
+    <div class="mx-auto my-2 my-lg-4" *ngIf="movies.length>0 && canLoadMore">
+        <button type="button" class="btn btn-dark btn-rounded" (click)="loadMore()">View more results</button>
+    </div>
+
+</div>
