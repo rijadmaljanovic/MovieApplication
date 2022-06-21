@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MovieApplication.Core\MovieApplication.Core.csproj" />
+    <ProjectReference Include="..\MovieApplication.Infrastructure\MovieApplication.Infrastructure.csproj" />
+    <ProjectReference Include="..\MovieApplication.Repositories\MovieApplication.Repositories.csproj" />
+  </ItemGroup>
+
+</Project>
