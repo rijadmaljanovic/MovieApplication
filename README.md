@@ -27,8 +27,25 @@ Password: User5
 On the frontend type the command 'npm install' and after that 'ng serve'.
 
 # About the project: 
-I decided to create this project as a good template for every startup project.
+I decided to create this project as a good template for every startup project. I choose a theme (movies) but it is easy to change to anything that is needed.
 I hope this template will find someone who wants to start a new project or learn with it.
 If someone who sees this has some questions about the project or whatever else feel free to contact me at:
              Email: rijadmaljanovic98@gmail.com
+             
+What do I implement?
+
+-Repository pattern with SOLID principles (clean architecture)
+
+-SOLID pattern on the frontend side (DI)
+*I always use different design patterns because they encourage us to create more maintainable, understandable and upgradable applications*
+
+-JSON data seed
+
+-Oauth2 auth - JWT
+
+-AutoMapper, Swagger with bearer auth, CORS policy, static files set up for images
+
+-The application is mobile responsive (bootstrap) 
+
+-Lazy loading for movie component
  
