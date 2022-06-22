@@ -11,11 +11,11 @@ You can set the connection string in appsettings.json by your requirements or le
 After you set up the connection string, the next step you should do to properly start the entire application is:
 
 Inside Package Manager Console you should run one command:
- *Make sure if you want to update DatabaseContext your default project should be: MusicApplication.Infrastructure
+ *Make sure if you want to update DatabaseContext your default project should be: MovieApplication.Infrastructure
 
  `update-database`
  
-After that make sure that the startup project is set to 'MusicApplication.Backoffice' and then start the backend. 
+After that make sure that the startup project is set to 'MovieApplication.Backoffice' and then start the backend. 
 After you start the project the database initializer will fill the tables with data and add 5 users:
 
 Username: User1
